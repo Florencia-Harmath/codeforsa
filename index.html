@@ -228,284 +228,71 @@
       </div>
     </section>
 
-    <section id="sumate" class="form-section">
+   <section id="sumate" class="form-section">
   <div class="container">
     <div class="form-wrap">
-
-      <!-- Encabezado general -->
       <header class="form-header">
         <h2>Formá parte</h2>
-        <p>Dejanos tus datos y te contactamos. Un granito de arena entre todos, lleva a la naturaleza a su mejor versión.</p>
+        <p>Dejanos tus datos y te contactamos.</p>
       </header>
 
-      <!-- ====== FORMULARIOS EN PESTAÑAS (SIN JS) ====== -->
-      <div class="tabs">
-        <input type="radio" name="tab" id="tab-prod" checked />
-        <label for="tab-prod">Productor</label>
+      <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK000008ScfF" method="POST" class="w2l">
+        <!-- Requeridos por Salesforce -->
+        <input type="hidden" name="oid" value="00DgK000008ScfF">
+        <input type="hidden" name="retURL" value="https://codeforsa.vercel.app/">
 
-        <input type="radio" name="tab" id="tab-emp" />
-        <label for="tab-emp">Empresa</label>
-
-        <!-- ====== Pestaña: PRODUCTOR ====== -->
-        <div class="tab-pane" aria-labelledby="tab-prod">
-          <header class="form-header">
-            <h2>Formá parte</h2>
-            <p>Dejanos tus datos y te contactamos.</p>
-          </header>
-
-          <form
-            action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK000008ScfF"
-            method="POST"
-            class="w2l"
-            autocomplete="on"
-          >
-            <!-- Requeridos por Web-to-Lead -->
-            <input type="hidden" name="oid" value="00DgK000008ScfF" />
-            <input type="hidden" name="retURL" value="https://codeforsa.vercel.app/" />
-
-            <!-- Datos ocultos -->
-            <input type="hidden" name="lead_source" value="Página web" />
-            <input type="hidden" name="status" value="Nuevo" />
-            <!-- Tipo de prospecto = Productor -->
-            <input type="hidden" name="00NgK00001eiDYH" value="Productor" />
-
-            <h4 class="group-title">Datos generales</h4>
-            <div class="grid-2 tight">
-              <div class="field">
-                <label for="p_first">Nombre</label>
-                <input id="p_first" name="first_name" type="text" required autocomplete="given-name" />
-              </div>
-              <div class="field">
-                <label for="p_last">Apellido</label>
-                <input id="p_last" name="last_name" type="text" required autocomplete="family-name" />
-              </div>
-
-              <div class="field">
-                <label for="p_company">Nombre de la finca / organización</label>
-                <input id="p_company" name="company" type="text" required autocomplete="organization" />
-              </div>
-              <div class="field">
-                <label for="p_ident">Identificación</label>
-                <input id="p_ident" name="00NgK00001edehD" type="text" inputmode="text" autocomplete="off" />
-              </div>
-
-              <div class="field">
-                <label for="p_phone">Teléfono</label>
-                <input id="p_phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" />
-              </div>
-              <div class="field">
-                <label for="p_email">Correo</label>
-                <input id="p_email" name="email" type="email" autocomplete="email" />
-              </div>
-            </div>
-
-            <fieldset class="address">
-              <legend>Dirección</legend>
-              <div class="grid-2 tight">
-                <div class="field">
-                  <label for="p_street">Calle / Dirección</label>
-                  <textarea id="p_street" name="street" rows="1" autocomplete="address-line1"></textarea>
-                </div>
-                <div class="field">
-                  <label for="p_city">Ciudad / Distrito</label>
-                  <input id="p_city" name="city" type="text" autocomplete="address-level2" />
-                </div>
-
-                <div class="field">
-                  <label for="p_state">Provincia</label>
-                  <input id="p_state" name="state" type="text" autocomplete="address-level1" />
-                </div>
-                <div class="field">
-                  <label for="p_zip">Código postal</label>
-                  <input id="p_zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" />
-                </div>
-
-                <div class="field">
-                  <label for="p_country">País</label>
-                  <input id="p_country" name="country" type="text" value="Costa Rica" autocomplete="country-name" />
-                </div>
-                <div class="field is-spacer"></div>
-              </div>
-            </fieldset>
-
-            <h4 class="group-title">Datos del productor</h4>
-            <div class="grid-2 tight">
-              <div class="field">
-                <label for="p_farm">Nombre de la finca</label>
-                <input id="p_farm" name="00NgK00001emiyT" type="text" />
-              </div>
-              <div class="field">
-                <label for="p_area">Área total de la finca (ha)</label>
-                <input id="p_area" name="00NgK00001ej4az" type="number" min="0" step="0.01" inputmode="decimal" />
-              </div>
-
-              <div class="field">
-                <label for="p_mod">Modalidad de interés</label>
-                <select id="p_mod" name="00NgK00001ed6D2">
-                  <option value="">Elegí…</option>
-                  <option value="Protección">Protección</option>
-                  <option value="Reforestación">Reforestación</option>
-                  <option value="Regeneración">Regeneración</option>
-                  <option value="SAF">SAF</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="p_cov">Cobertura actual</label>
-                <select id="p_cov" name="00NgK00001edktw">
-                  <option value="">Elegí…</option>
-                  <option value="Bosque">Bosque</option>
-                  <option value="Pasto">Pasto</option>
-                  <option value="Cultivo">Cultivo</option>
-                  <option value="Otro">Otro</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="p_cov_other">Otra cobertura (especificar)</label>
-                <input id="p_cov_other" name="00NgK00001ejHRl" type="text" />
-              </div>
-              <div class="field is-spacer"></div>
-            </div>
-
-            <button type="submit" class="btn btn--orange btn--full">Enviar</button>
-          </form>
+        <div class="grid-2 tight">
+          <div class="field">
+            <label for="first_name">Nombre</label>
+            <input id="first_name" name="first_name" type="text" maxlength="40" required>
+          </div>
+          <div class="field">
+            <label for="last_name">Apellido</label>
+            <input id="last_name" name="last_name" type="text" maxlength="80" required>
+          </div>
         </div>
 
-        <!-- ====== Pestaña: EMPRESA ====== -->
-        <div class="tab-pane" aria-labelledby="tab-emp">
-          <header class="form-header">
-            <h2>Formá parte</h2>
-            <p>Dejanos tus datos y te contactamos.</p>
-          </header>
-
-          <form
-            action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK000008ScfF"
-            method="POST"
-            class="w2l"
-            autocomplete="on"
-          >
-            <!-- Requeridos por Web-to-Lead -->
-            <input type="hidden" name="oid" value="00DgK000008ScfF" />
-            <input type="hidden" name="retURL" value="https://codeforsa.vercel.app/" />
-
-            <!-- Datos ocultos -->
-            <input type="hidden" name="lead_source" value="Página web" />
-            <input type="hidden" name="status" value="Nuevo" />
-            <!-- Tipo de prospecto = Empresa -->
-            <input type="hidden" name="00NgK00001eiDYH" value="Empresa" />
-
-            <h4 class="group-title">Datos generales</h4>
-            <div class="grid-2 tight">
-              <div class="field">
-                <label for="e_first">Nombre</label>
-                <input id="e_first" name="first_name" type="text" required autocomplete="given-name" />
-              </div>
-              <div class="field">
-                <label for="e_last">Apellido</label>
-                <input id="e_last" name="last_name" type="text" required autocomplete="family-name" />
-              </div>
-
-              <div class="field">
-                <label for="e_company">Nombre de la empresa / organización</label>
-                <input id="e_company" name="company" type="text" required autocomplete="organization" />
-              </div>
-              <div class="field">
-                <label for="e_ident">Identificación</label>
-                <input id="e_ident" name="00NgK00001edehD" type="text" inputmode="text" autocomplete="off" />
-              </div>
-
-              <div class="field">
-                <label for="e_phone">Teléfono</label>
-                <input id="e_phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" />
-              </div>
-              <div class="field">
-                <label for="e_email">Correo</label>
-                <input id="e_email" name="email" type="email" autocomplete="email" />
-              </div>
-            </div>
-
-            <fieldset class="address">
-              <legend>Dirección</legend>
-              <div class="grid-2 tight">
-                <div class="field">
-                  <label for="e_street">Calle / Dirección</label>
-                  <textarea id="e_street" name="street" rows="1" autocomplete="address-line1"></textarea>
-                </div>
-                <div class="field">
-                  <label for="e_city">Ciudad / Distrito</label>
-                  <input id="e_city" name="city" type="text" autocomplete="address-level2" />
-                </div>
-
-                <div class="field">
-                  <label for="e_state">Provincia</label>
-                  <input id="e_state" name="state" type="text" autocomplete="address-level1" />
-                </div>
-                <div class="field">
-                  <label for="e_zip">Código postal</label>
-                  <input id="e_zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" />
-                </div>
-
-                <div class="field">
-                  <label for="e_country">País</label>
-                  <input id="e_country" name="country" type="text" value="Costa Rica" autocomplete="country-name" />
-                </div>
-                <div class="field is-spacer"></div>
-              </div>
-            </fieldset>
-
-            <h4 class="group-title">Datos de la empresa</h4>
-            <div class="grid-2 tight">
-              <div class="field">
-                <label for="e_name_emp">Nombre de la empresa</label>
-                <input id="e_name_emp" name="00NgK00001ebzLb" type="text" />
-              </div>
-
-              <div class="field">
-                <label for="e_sector">Sector económico</label>
-                <select id="e_sector" name="00NgK00001ejPxB">
-                  <option value="">Elegí…</option>
-                  <option value="Agroindustria">Agroindustria</option>
-                  <option value="Energía">Energía</option>
-                  <option value="Servicios">Servicios</option>
-                  <option value="Comercio">Comercio</option>
-                  <option value="Otro">Otro</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="e_sector_otro">Otro sector económico</label>
-                <input id="e_sector_otro" name="00NgK00001ejSdJ" type="text" />
-              </div>
-
-              <div class="field">
-                <label for="e_interes">Interés principal</label>
-                <select id="e_interes" name="00NgK00001ejfDx">
-                  <option value="">Elegí…</option>
-                  <option value="Donación">Donación</option>
-                  <option value="Compensación de CO₂">Compensación de CO₂</option>
-                  <option value="Patrocinio">Patrocinio</option>
-                  <option value="Voluntariado corporativo">Voluntariado corporativo</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="e_colab">Número de colaboradores</label>
-                <input id="e_colab" name="00NgK00001ejnGL" type="number" min="1" step="1" inputmode="numeric" />
-              </div>
-              <div class="field is-spacer"></div>
-            </div>
-
-            <button type="submit" class="btn btn--orange btn--full">Enviar</button>
-          </form>
+        <div class="grid-2 tight">
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" maxlength="80" required>
+          </div>
+          <div class="field">
+            <label for="phone">Teléfono</label>
+            <input id="phone" name="phone" type="tel" maxlength="40">
+          </div>
         </div>
 
-      </div>
-      <!-- /tabs -->
+        <div class="grid-2 tight">
+          <div class="field">
+            <label for="company">Empresa / Organización</label>
+            <input id="company" name="company" type="text" maxlength="40">
+          </div>
+          <div class="field">
+            <label for="00NgK00001edehD">Identificación / Cédula jurídica</label>
+            <input id="00NgK00001edehD" name="00NgK00001edehD" type="text" maxlength="255">
+          </div>
+        </div>
 
+        <div class="field" style="padding:0 20px;">
+          <label for="lead_source">Cómo nos conociste</label>
+          <select id="lead_source" name="lead_source">
+            <option value="">-- Seleccionar --</option>
+            <option value="Página web">Página web</option>
+            <option value="Formulario de contacto">Formulario de contacto</option>
+            <option value="Campañas de reforestación">Campañas de reforestación</option>
+            <option value="Ferias">Ferias</option>
+            <option value="Convenios con instituciones">Convenios con instituciones</option>
+            <option value="Referencia de terceros">Referencia de terceros</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn--orange btn--full">Enviar</button>
+      </form>
     </div>
   </div>
 </section>
+
 
     <footer class="site-footer">
       <div class="container footer-inner">
