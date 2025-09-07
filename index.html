@@ -228,109 +228,109 @@
       </div>
     </section>
 
+
+
+
+
+    
     <section id="sumate" class="form-section">
-      <div class="container">
-        <div class="form-wrap">
-          <header class="form-header">
-            <h2>Formá parte</h2>
-            <p>Dejanos tus datos y te contactamos.</p>
-          </header>
+  <div class="container">
+    <div class="form-wrap">
+      <header class="form-header">
+        <h2>Formá parte</h2>
+        <p>Dejanos tus datos y te contactamos.</p>
+      </header>
 
-          <form
-            action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK000008ScfF"
-            method="POST"
-            class="w2l"
-          >
-            <input type="hidden" name="oid" value="00DgK000008ScfF" />
-            <input
-              type="hidden"
-              name="retURL"
-              value="https://codeforsa.vercel.app/"
-            />
+      <form
+        action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK000008ScfF"
+        method="POST"
+        class="w2l"
+      >
+        <input type="hidden" name="oid" value="00DgK000008ScfF" />
+        <input type="hidden" name="retURL" value="https://codeforsa.vercel.app/" />
+        <input type="hidden" name="lead_source" value="Página web" />
 
-            <input type="hidden" name="lead_source" value="Página web" />
-
-            <div class="grid-2 tight">
-              <div class="field">
-                <label for="first_name">Nombre</label>
-                <input
-                  id="first_name"
-                  name="first_name"
-                  type="text"
-                  maxlength="40"
-                  required
-                />
-              </div>
-              <div class="field">
-                <label for="last_name">Apellido</label>
-                <input
-                  id="last_name"
-                  name="last_name"
-                  type="text"
-                  maxlength="80"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="grid-2 tight">
-              <div class="field">
-                <label for="email">Correo electrónico</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  maxlength="80"
-                  required
-                />
-              </div>
-              <div class="field">
-                <label for="phone">Teléfono</label>
-                <input id="phone" name="phone" type="tel" maxlength="40" />
-              </div>
-            </div>
-
-            <div class="grid-2 tight">
-              <div class="field">
-                <label for="company">Empresa / Organización</label>
-                <input id="company" name="company" type="text" maxlength="40" />
-              </div>
-              <div class="field">
-                <label for="00NgK00001edehD"
-                  >Identificación / Cédula jurídica</label
-                >
-                <input
-                  id="00NgK00001edehD"
-                  name="00NgK00001edehD"
-                  type="text"
-                  maxlength="255"
-                />
-              </div>
-            </div>
-
-            <div class="field" style="padding: 0 20px">
-              <label for="00NgK00001eiDYH">Tipo prospecto</label>
-              <select
-                id="00NgK00001eiDYH"
-                name="00NgK00001eiDYH"
-                title="Tipo prospecto"
-                required
-              >
-                <option value="">-- Seleccionar --</option>
-                <option value="Productor">Productor</option>
-                <option value="Empresa">Empresa</option>
-                <option value="Institución">Institución</option>
-                <option value="Voluntario">Voluntario</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn--orange btn--full">
-              Enviar
-            </button>
-          </form>
+        <div class="grid-2 tight">
+          <div class="field">
+            <label for="first_name">Nombre</label>
+            <input id="first_name" name="first_name" type="text" maxlength="40" required />
+          </div>
+          <div class="field">
+            <label for="last_name">Apellido</label>
+            <input id="last_name" name="last_name" type="text" maxlength="80" required />
+          </div>
         </div>
-      </div>
-    </section>
+
+        <div class="grid-2 tight">
+          <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" maxlength="80" required />
+          </div>
+          <div class="field">
+            <label for="phone">Teléfono</label>
+            <input id="phone" name="phone" type="tel" maxlength="40" />
+          </div>
+        </div>
+
+        <div class="grid-2 tight">
+          <div class="field">
+            <label for="company">Empresa / Organización</label>
+            <input id="company" name="company" type="text" maxlength="40" />
+          </div>
+          <div class="field">
+            <label for="00NgK00001edehD">Identificación / Cédula jurídica</label>
+            <input id="00NgK00001edehD" name="00NgK00001edehD" type="text" maxlength="255" />
+          </div>
+        </div>
+
+        <div class="field" style="padding:0 20px">
+          <label for="00NgK00001eiDYH">Tipo:</label>
+          <select id="00NgK00001eiDYH" name="00NgK00001eiDYH" title="Tipo prospecto" required>
+            <option value="">-- Seleccionar --</option>
+            <option value="Productor">Productor</option>
+            <option value="Empresa">Empresa</option>
+            <option value="Institución">Institución</option>
+            <option value="Voluntario">Voluntario</option>
+          </select>
+        </div>
+
+        <fieldset class="address">
+          <legend>Dirección</legend>
+          <div class="grid-2 tight">
+            <div class="field">
+              <label for="street">Calle / Dirección</label>
+              <textarea id="street" name="street" rows="1"></textarea>
+            </div>
+            <div class="field">
+              <label for="city">Ciudad / Distrito</label>
+              <input id="city" name="city" type="text" />
+            </div>
+            <div class="field">
+              <label for="state">Provincia / Estado</label>
+              <input id="state" name="state" type="text" />
+            </div>
+            <div class="field">
+              <label for="zip">Código postal</label>
+              <input id="zip" name="zip" type="text" inputmode="numeric" />
+            </div>
+            <div class="field">
+              <label for="country">País</label>
+              <input id="country" name="country" type="text" value="Costa Rica" />
+            </div>
+            <div class="field is-spacer"></div>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn--orange btn--full">Enviar</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+
 
     <footer class="site-footer">
       <div class="container footer-inner">
