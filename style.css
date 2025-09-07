@@ -69,28 +69,103 @@ img{max-width:100%; display:block}
 .impact-number{font-size:44px; color:var(--green-900); font-weight:900; line-height:1}
 .impact-label{color:var(--green-900); font-weight:700}
 .impact-foot{text-align:center; font-size:12px; color:#555; margin-top:10px}
-.tabs{display:grid; grid-template-columns:auto auto; gap:8px; padding:0 20px 12px;}
-.tabs input[type="radio"]{display:none}
-.tabs label{background:#e7f0ee; color:#0a4c43; font-weight:700; padding:8px 14px; border-radius:10px; cursor:pointer; user-select:none; text-align:center;border:1px solid rgba(0,0,0,.08);}
-#tab-prod:checked + label{background:#0a5f54; color:#fff}
-#tab-prod:checked + label + input + label{background:#e7f0ee; color:#0a4c43}
-#tab-emp:checked + label{background:#0a5f54; color:#fff}
-.tabs .tab-pane{grid-column:1 / -1; display:none}
-#tab-prod:checked ~ .tab-pane:nth-of-type(1){display:block}
-#tab-emp:checked ~ .tab-pane:nth-of-type(2){display:block}
-.grid-2{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px;}
-.grid-2.tight .field{min-width:0}
-.field{display:flex; flex-direction:column; gap:6px}
-.field label{font-weight:700; color:var(--green-900); font-size:14px}
-.field input, .field select, .field textarea{
-  width:100%; padding:9px 10px; font-size:14px;
-  border:2px solid var(--green-500); border-radius:8px; background:#fff;
+/* ====== LIMPIEZA Y COMPACTADO DEL FORM ====== */
+
+/* Card centrada y ancha moderada */
+.form-section{padding:40px 0; background:var(--gray-100);}
+.form-wrap{
+  max-width: 1040px;   /* antes ocupaba todo */
+  margin: 0 auto;
+  background:#fff;
+  border-radius:16px;
+  border:1px solid rgba(0,0,0,.06);
+  box-shadow: var(--shadow);
+  overflow: hidden;
 }
-.field textarea{resize:vertical; min-height:36px}
-.is-spacer{visibility:hidden; height:0}
-.group-title{margin:12px 0 8px; font-size:16px; color:#0a4c43}
-.address legend{font-weight:800; color:#0a4c43; padding:0 4px}
-.btn--full{margin-top:10px}
+
+/* Encabezado */
+.form-header{background:var(--green-900); color:#fff; padding:18px 22px;}
+.form-header h2{margin:0 0 4px; font-size:24px;}
+.form-header p{margin:0; opacity:.92}
+
+/* Tabs más limpias */
+.tabs{
+  display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  padding:14px 20px 0;
+}
+.tabs input[type="radio"]{display:none;}
+.tabs label{
+  text-align:center; cursor:pointer; user-select:none;
+  font-weight:700; font-size:14px;
+  padding:10px 14px; border-radius:10px;
+  background:#f3f6f6; color:#0d4f47;
+  border:1px solid rgba(0,0,0,.08);
+  transition:all .15s ease;
+}
+#tab-prod:checked + label,
+#tab-emp:checked + label{
+  background:var(--green-700, #0b6a5c);
+  color:#fff; border-color:transparent;
+}
+.tabs .tab-pane{grid-column:1/-1; display:none;}
+#tab-prod:checked ~ .tab-pane:nth-of-type(1){display:block;}
+#tab-emp:checked  ~ .tab-pane:nth-of-type(2){display:block;}
+
+/* Títulos de grupo */
+.group-title{
+  margin:14px 20px 8px; font-size:16px; color:#0e4e46; font-weight:800;
+}
+
+/* Grilla 2 col con respiro */
+.grid-2{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:16px; padding:14px 20px;}
+.grid-2.tight{gap:14px; padding-top:6px;}
+@media (max-width: 900px){
+  .grid-2, .grid-2.tight{grid-template-columns:1fr;}
+}
+
+/* Campos más chicos y prolijos */
+.field{display:flex; flex-direction:column; gap:6px; min-width:0;}
+.field label{
+  font-size: 13.5px; font-weight:700; color:#114f47;
+  line-height:1.3; margin-left:2px;
+}
+
+/* inputs/textarea/select compactos */
+.field input,
+.field select,
+.field textarea{
+  background:#fff;
+  border:1.5px solid #0f8a7a2b;      /* sutil */
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:14px; line-height:1.2;
+  height:42px;                        /* compact */
+}
+.field textarea{height:42px; min-height:42px; resize:vertical}
+
+/* Focus accesible */
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  outline:none;
+  border-color:#0f8a7a;
+  box-shadow:0 0 0 3px rgba(15,138,122,.14);
+}
+
+/* Fieldset Dirección */
+.address{
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:12px; margin:8px 20px 6px; padding:10px 0 6px;
+  background:#fafdfc;
+}
+.address legend{
+  margin-left:10px; padding:0 6px; font-weight:800;
+  color:#0f4f46; font-size:14px;
+}
+
+/* Botón */
+.btn--full{margin:10px 20px 22px;}
+
 
 @media (max-width: 700px){.grid-2{ grid-template-columns: 1fr;}}
 .site-footer { background: var(--green-900); color: var(--white); padding: 32px 0; margin-top: 10px; border-top: 1px solid rgba(255,255,255,.15);}
