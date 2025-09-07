@@ -244,7 +244,6 @@
             action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK000008ScfF"
             method="POST"
           >
-            <!-- Obligatorios Web-to-Lead -->
             <input type="hidden" name="oid" value="00DgK000008ScfF" />
             <input
               type="hidden"
@@ -252,13 +251,10 @@
               value="https://codeforsa.vercel.app/"
             />
 
-            <!-- DATOS OCULTOS -->
             <input type="hidden" name="lead_source" value="Página web" />
-            <!-- Lead Source -->
             <input type="hidden" name="status" value="Nuevo" />
-            <!-- Lead Status -->
 
-            <!-- DATOS GENERALES -->
+            <h4>Datos generales</h4>
             <div class="grid-2">
               <div class="field">
                 <label for="first_name">Nombre</label>
@@ -270,7 +266,7 @@
                 <input id="last_name" name="last_name" type="text" required />
               </div>
 
-              <div class="field field--full">
+              <div class="field">
                 <label for="00NgK00001eiDYH">Tipo de prospecto</label>
                 <select id="00NgK00001eiDYH" name="00NgK00001eiDYH" required>
                   <option value="">Elegí una opción…</option>
@@ -281,7 +277,7 @@
                 </select>
               </div>
 
-              <div class="field field--full">
+              <div class="field">
                 <label for="company"
                   >Nombre de la finca / organización / empresa</label
                 >
@@ -299,7 +295,7 @@
 
               <div class="field">
                 <label for="phone">Teléfono</label>
-                <input id="phone" name="phone" type="tel" />
+                <input id="phone" name="phone" type="tel" inputmode="tel" />
               </div>
 
               <div class="field">
@@ -308,26 +304,29 @@
               </div>
             </div>
 
-            <!-- DIRECCIÓN (para mapa en Salesforce) -->
             <fieldset class="address">
               <legend>Dirección</legend>
               <div class="grid-2">
-                <div class="field field--full">
+                <div class="field">
                   <label for="street">Calle / Dirección</label>
                   <textarea id="street" name="street" rows="2"></textarea>
                 </div>
+
                 <div class="field">
                   <label for="city">Ciudad / Distrito</label>
                   <input id="city" name="city" type="text" />
                 </div>
+
                 <div class="field">
                   <label for="state">Provincia</label>
                   <input id="state" name="state" type="text" />
                 </div>
+
                 <div class="field">
                   <label for="zip">Código postal</label>
-                  <input id="zip" name="zip" type="text" />
+                  <input id="zip" name="zip" type="text" inputmode="numeric" />
                 </div>
+
                 <div class="field">
                   <label for="country">País</label>
                   <input
@@ -343,7 +342,7 @@
             <section id="sec-productor" class="sec-conditional" hidden>
               <h4>Datos del productor</h4>
               <div class="grid-2">
-                <div class="field field--full">
+                <div class="field">
                   <label for="00NgK00001emiyT">Nombre de la finca</label>
                   <input
                     id="00NgK00001emiyT"
@@ -387,7 +386,7 @@
                   </select>
                 </div>
 
-                <div class="field field--full" id="wrap-otra-cobertura" hidden>
+                <div class="field" id="wrap-otra-cobertura" hidden>
                   <label for="00NgK00001ejHRl"
                     >Otra cobertura (especificar)</label
                   >
@@ -399,10 +398,11 @@
                 </div>
               </div>
             </section>
+
             <section id="sec-empresa" class="sec-conditional" hidden>
               <h4>Datos de la empresa</h4>
               <div class="grid-2">
-                <div class="field field--full">
+                <div class="field">
                   <label for="00NgK00001ebzLb">Nombre de la empresa</label>
                   <input
                     id="00NgK00001ebzLb"
@@ -459,7 +459,6 @@
                 </div>
               </div>
             </section>
-
             <button type="submit" class="btn btn--orange btn--full">
               Enviar
             </button>
@@ -488,47 +487,49 @@
         </div>
       </div>
     </footer>
-      <script>
-  (function () {
-    const tipo = document.getElementById('00NgK00001eiDYH');
-    const secProd = document.getElementById('sec-productor');
-    const secEmp = document.getElementById('sec-empresa');
-    const cobertura = document.getElementById('00NgK00001edktw');
-    const wrapOtraCob = document.getElementById('wrap-otra-cobertura');
-    const otroCob = document.getElementById('00NgK00001ejHRl');
-    const sector = document.getElementById('00NgK00001ejPxB');
-    const wrapOtroSector = document.getElementById('wrap-otro-sector');
-    const otroSector = document.getElementById('00NgK00001ejSdJ');
+    <script>
+      (function () {
+        const tipo = document.getElementById("00NgK00001eiDYH");
+        const secProd = document.getElementById("sec-productor");
+        const secEmp = document.getElementById("sec-empresa");
+        const cobertura = document.getElementById("00NgK00001edktw");
+        const wrapOtraCob = document.getElementById("wrap-otra-cobertura");
+        const otroCob = document.getElementById("00NgK00001ejHRl");
+        const sector = document.getElementById("00NgK00001ejPxB");
+        const wrapOtroSector = document.getElementById("wrap-otro-sector");
+        const otroSector = document.getElementById("00NgK00001ejSdJ");
 
-    function toggleSections() {
-      const v = tipo.value;
-      secProd.hidden = v !== 'Productor';
-      secEmp.hidden = v !== 'Empresa';
+        function toggleSections() {
+          const v = tipo.value;
+          secProd.hidden = v !== "Productor";
+          secEmp.hidden = v !== "Empresa";
 
-      document.getElementById('00NgK00001emiyT').required = (v === 'Productor');
-      document.getElementById('00NgK00001ebzLb').required = (v === 'Empresa');
-    }
+          document.getElementById("00NgK00001emiyT").required =
+            v === "Productor";
+          document.getElementById("00NgK00001ebzLb").required = v === "Empresa";
+        }
 
-    function toggleOtraCobertura() {
-      const show = cobertura && cobertura.value === 'Otro';
-      wrapOtraCob.hidden = !show;
-      if (otroCob) otroCob.required = show;
-    }
+        function toggleOtraCobertura() {
+          const show = cobertura && cobertura.value === "Otro";
+          wrapOtraCob.hidden = !show;
+          if (otroCob) otroCob.required = show;
+        }
 
-    function toggleOtroSector() {
-      const show = sector && sector.value === 'Otro';
-      wrapOtroSector.hidden = !show;
-      if (otroSector) otroSector.required = show;
-    }
+        function toggleOtroSector() {
+          const show = sector && sector.value === "Otro";
+          wrapOtroSector.hidden = !show;
+          if (otroSector) otroSector.required = show;
+        }
 
-    if (tipo) tipo.addEventListener('change', toggleSections);
-    if (cobertura) cobertura.addEventListener('change', toggleOtraCobertura);
-    if (sector) sector.addEventListener('change', toggleOtroSector);
+        if (tipo) tipo.addEventListener("change", toggleSections);
+        if (cobertura)
+          cobertura.addEventListener("change", toggleOtraCobertura);
+        if (sector) sector.addEventListener("change", toggleOtroSector);
 
-    toggleSections();
-    toggleOtraCobertura();
-    toggleOtroSector();
-  })();
-</script>
+        toggleSections();
+        toggleOtraCobertura();
+        toggleOtroSector();
+      })();
+    </script>
   </body>
 </html>
