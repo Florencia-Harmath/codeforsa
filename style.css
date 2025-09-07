@@ -156,18 +156,15 @@ img{max-width:100%; display:block}
   align-items:flex-start;
   /* si tu .container global tiene padding muy grande,
      podés suavizarlo sólo aquí: */
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 14px;
+  padding-right: 14px;
 }
 
 .form-wrap{
-  width: min(980px, 100%); /* o 1040px si preferís */
-  margin: 0;              /* el centrado lo hace el padre flex */
-  box-sizing: border-box; /* evita desbordes por padding interno */
+  width: min(900px, 100%); 
+  margin: 0;              
+  box-sizing: border-box; 
 }
-
-/* Por si alguna regla global del .container fija un max-width raro,
-   le damos uno sano sólo en esta sección */
 .form-section > .container{
   max-width: 1200px;
   margin-inline: auto;
