@@ -239,115 +239,226 @@
             </p>
           </header>
 
-          <form class="grid-2" action="#" method="post" novalidate>
-            <div class="field">
-              <label for="first_name">Nombre del representante</label>
-              <input
-                id="first_name"
-                name="first_name"
-                type="text"
-                placeholder="Tu nombre"
-                required
-              />
+          <form
+            id="w2l-codeforsa"
+            action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DgK000008ScfF"
+            method="POST"
+          >
+            <!-- Obligatorios Web-to-Lead -->
+            <input type="hidden" name="oid" value="00DgK000008ScfF" />
+            <input
+              type="hidden"
+              name="retURL"
+              value="https://codeforsa.vercel.app/"
+            />
+
+            <!-- DATOS OCULTOS -->
+            <input type="hidden" name="lead_source" value="Página web" />
+            <!-- Lead Source -->
+            <input type="hidden" name="status" value="Nuevo" />
+            <!-- Lead Status -->
+
+            <!-- DATOS GENERALES -->
+            <div class="grid-2">
+              <div class="field">
+                <label for="first_name">Nombre</label>
+                <input id="first_name" name="first_name" type="text" required />
+              </div>
+
+              <div class="field">
+                <label for="last_name">Apellido</label>
+                <input id="last_name" name="last_name" type="text" required />
+              </div>
+
+              <div class="field field--full">
+                <label for="00NgK00001eiDYH">Tipo de prospecto</label>
+                <select id="00NgK00001eiDYH" name="00NgK00001eiDYH" required>
+                  <option value="">Elegí una opción…</option>
+                  <option value="Productor">Productor</option>
+                  <option value="Empresa">Empresa</option>
+                  <option value="Institución">Institución</option>
+                  <option value="Voluntario">Voluntario</option>
+                </select>
+              </div>
+
+              <div class="field field--full">
+                <label for="company"
+                  >Nombre de la finca / organización / empresa</label
+                >
+                <input id="company" name="company" type="text" required />
+              </div>
+
+              <div class="field">
+                <label for="00NgK00001edehD">Identificación</label>
+                <input
+                  id="00NgK00001edehD"
+                  name="00NgK00001edehD"
+                  type="text"
+                />
+              </div>
+
+              <div class="field">
+                <label for="phone">Teléfono</label>
+                <input id="phone" name="phone" type="tel" />
+              </div>
+
+              <div class="field">
+                <label for="email">Correo</label>
+                <input id="email" name="email" type="email" />
+              </div>
             </div>
 
-            <div class="field">
-              <label for="last_name">Apellido del representante</label>
-              <input
-                id="last_name"
-                name="last_name"
-                type="text"
-                placeholder="Tu apellido"
-                required
-              />
-            </div>
+            <!-- DIRECCIÓN (para mapa en Salesforce) -->
+            <fieldset class="address">
+              <legend>Dirección</legend>
+              <div class="grid-2">
+                <div class="field field--full">
+                  <label for="street">Calle / Dirección</label>
+                  <textarea id="street" name="street" rows="2"></textarea>
+                </div>
+                <div class="field">
+                  <label for="city">Ciudad / Distrito</label>
+                  <input id="city" name="city" type="text" />
+                </div>
+                <div class="field">
+                  <label for="state">Provincia</label>
+                  <input id="state" name="state" type="text" />
+                </div>
+                <div class="field">
+                  <label for="zip">Código postal</label>
+                  <input id="zip" name="zip" type="text" />
+                </div>
+                <div class="field">
+                  <label for="country">País</label>
+                  <input
+                    id="country"
+                    name="country"
+                    type="text"
+                    value="Costa Rica"
+                  />
+                </div>
+              </div>
+            </fieldset>
 
-            <div class="field">
-              <label for="phone">Teléfono</label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="Tu teléfono"
-                required
-              />
-            </div>
+            <section id="sec-productor" class="sec-conditional" hidden>
+              <h4>Datos del productor</h4>
+              <div class="grid-2">
+                <div class="field field--full">
+                  <label for="00NgK00001emiyT">Nombre de la finca</label>
+                  <input
+                    id="00NgK00001emiyT"
+                    name="00NgK00001emiyT"
+                    type="text"
+                  />
+                </div>
 
-            <div class="field">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Tu email"
-                required
-              />
-            </div>
-
-            <div class="field">
-              <label for="tipo_empr">Tipo de emprendimiento</label>
-              <input
-                id="tipo_empr"
-                name="tipo_empr"
-                type="text"
-                placeholder="Productor, PyME, ONG, etc."
-              />
-            </div>
-
-            <div class="field">
-              <label for="ident">Identificación legal</label>
-              <input
-                id="ident"
-                name="ident"
-                type="text"
-                placeholder="Ej: DNI, Pasaporte"
-              />
-            </div>
-
-            <div class="field">
-              <label for="finca">Nombre/s de la finca/s</label>
-              <input
-                id="finca"
-                name="finca"
-                type="text"
-                placeholder="Nombre de la finca"
-              />
-            </div>
-
-            <div class="field">
-              <label for="otro">Otro dato</label>
-              <input
-                id="otro"
-                name="otro"
-                type="text"
-                placeholder="Detalle adicional"
-              />
-            </div>
-
-            <div class="field field--full">
-              <label for="interes">¿En qué te gustaría colaborar?</label>
-              <select id="interes" name="interes">
-                <option value="plantines">Financiar plantines</option>
-                <option value="voluntariado">Voluntariado</option>
-                <option value="alianza">Alianza empresarial</option>
-                <option value="apadrinar">Apadrinar productores</option>
-              </select>
-            </div>
-            <div class="form-legal field--full">
-              <label class="checkbox">
-                <input id="consent" type="checkbox" required />
-                <span>
-                  Acepto ser contactada/o y acepto los
-                  <a href="terminos.html" target="_blank" rel="noopener"
-                    >Términos y Condiciones</a
+                <div class="field">
+                  <label for="00NgK00001ej4az"
+                    >Área total de la finca (ha)</label
                   >
-                </span>
-              </label>
+                  <input
+                    id="00NgK00001ej4az"
+                    name="00NgK00001ej4az"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                  />
+                </div>
 
-              <small class="legal-note">
-                Usamos Salesforce para resguardar tus datos de forma segura.
-              </small>
-            </div>
+                <div class="field">
+                  <label for="00NgK00001ed6D2">Modalidad de interés</label>
+                  <select id="00NgK00001ed6D2" name="00NgK00001ed6D2">
+                    <option value="">Elegí…</option>
+                    <option value="Protección">Protección</option>
+                    <option value="Reforestación">Reforestación</option>
+                    <option value="Regeneración">Regeneración</option>
+                    <option value="SAF">SAF</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="00NgK00001edktw">Cobertura actual</label>
+                  <select id="00NgK00001edktw" name="00NgK00001edktw">
+                    <option value="">Elegí…</option>
+                    <option value="Bosque">Bosque</option>
+                    <option value="Pasto">Pasto</option>
+                    <option value="Cultivo">Cultivo</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+                </div>
+
+                <div class="field field--full" id="wrap-otra-cobertura" hidden>
+                  <label for="00NgK00001ejHRl"
+                    >Otra cobertura (especificar)</label
+                  >
+                  <input
+                    id="00NgK00001ejHRl"
+                    name="00NgK00001ejHRl"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </section>
+            <section id="sec-empresa" class="sec-conditional" hidden>
+              <h4>Datos de la empresa</h4>
+              <div class="grid-2">
+                <div class="field field--full">
+                  <label for="00NgK00001ebzLb">Nombre de la empresa</label>
+                  <input
+                    id="00NgK00001ebzLb"
+                    name="00NgK00001ebzLb"
+                    type="text"
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="00NgK00001ejPxB">Sector económico</label>
+                  <select id="00NgK00001ejPxB" name="00NgK00001ejPxB">
+                    <option value="">Elegí…</option>
+                    <option value="Agroindustria">Agroindustria</option>
+                    <option value="Energía">Energía</option>
+                    <option value="Servicios">Servicios</option>
+                    <option value="Comercio">Comercio</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+                </div>
+
+                <div class="field" id="wrap-otro-sector" hidden>
+                  <label for="00NgK00001ejSdJ">Otro sector económico</label>
+                  <input
+                    id="00NgK00001ejSdJ"
+                    name="00NgK00001ejSdJ"
+                    type="text"
+                  />
+                </div>
+
+                <div class="field">
+                  <label for="00NgK00001ejfDx">Interés principal</label>
+                  <select id="00NgK00001ejfDx" name="00NgK00001ejfDx">
+                    <option value="">Elegí…</option>
+                    <option value="Donación">Donación</option>
+                    <option value="Compensación de CO₂">
+                      Compensación de CO₂
+                    </option>
+                    <option value="Patrocinio">Patrocinio</option>
+                    <option value="Voluntariado corporativo">
+                      Voluntariado corporativo
+                    </option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="00NgK00001ejnGL">Número de colaboradores</label>
+                  <input
+                    id="00NgK00001ejnGL"
+                    name="00NgK00001ejnGL"
+                    type="number"
+                    min="1"
+                    step="1"
+                  />
+                </div>
+              </div>
+            </section>
 
             <button type="submit" class="btn btn--orange btn--full">
               Enviar
@@ -377,5 +488,47 @@
         </div>
       </div>
     </footer>
+      <script>
+  (function () {
+    const tipo = document.getElementById('00NgK00001eiDYH');
+    const secProd = document.getElementById('sec-productor');
+    const secEmp = document.getElementById('sec-empresa');
+    const cobertura = document.getElementById('00NgK00001edktw');
+    const wrapOtraCob = document.getElementById('wrap-otra-cobertura');
+    const otroCob = document.getElementById('00NgK00001ejHRl');
+    const sector = document.getElementById('00NgK00001ejPxB');
+    const wrapOtroSector = document.getElementById('wrap-otro-sector');
+    const otroSector = document.getElementById('00NgK00001ejSdJ');
+
+    function toggleSections() {
+      const v = tipo.value;
+      secProd.hidden = v !== 'Productor';
+      secEmp.hidden = v !== 'Empresa';
+
+      document.getElementById('00NgK00001emiyT').required = (v === 'Productor');
+      document.getElementById('00NgK00001ebzLb').required = (v === 'Empresa');
+    }
+
+    function toggleOtraCobertura() {
+      const show = cobertura && cobertura.value === 'Otro';
+      wrapOtraCob.hidden = !show;
+      if (otroCob) otroCob.required = show;
+    }
+
+    function toggleOtroSector() {
+      const show = sector && sector.value === 'Otro';
+      wrapOtroSector.hidden = !show;
+      if (otroSector) otroSector.required = show;
+    }
+
+    if (tipo) tipo.addEventListener('change', toggleSections);
+    if (cobertura) cobertura.addEventListener('change', toggleOtraCobertura);
+    if (sector) sector.addEventListener('change', toggleOtroSector);
+
+    toggleSections();
+    toggleOtraCobertura();
+    toggleOtroSector();
+  })();
+</script>
   </body>
 </html>
