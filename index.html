@@ -230,7 +230,6 @@
 
 
 
-
 <section id="sumate" class="form-section">
   <div class="container">
     <div class="form-wrap">
@@ -275,32 +274,35 @@
             <label for="company">Empresa / Organización</label>
             <input id="company" name="company" type="text" maxlength="40" />
           </div>
-
           <div class="field">
             <label for="00NgK00001fdlgT">Tipo de identificación</label>
             <select id="00NgK00001fdlgT" name="00NgK00001fdlgT" title="Identification Type">
-              <option value="">--None--</option>
+              <option value="">-- Seleccionar --</option>
               <option value="Cédula Física">Cédula Física</option>
               <option value="Cédula Jurídica">Cédula Jurídica</option>
               <option value="Nite">Nite</option>
               <option value="DIMEX">DIMEX</option>
               <option value="Pasaporte">Pasaporte</option>
             </select>
-
-            <label for="00NgK00001edehD" style="margin-top:8px; display:block;">Identificación / Cédula jurídica</label>
-            <input id="00NgK00001edehD" name="00NgK00001edehD" type="text" maxlength="255" />
           </div>
         </div>
 
-        <div class="field" style="padding:0 20px">
-          <label for="00NgK00001eiDYH">Tipo:</label>
-          <select id="00NgK00001eiDYH" name="00NgK00001eiDYH" title="Tipo prospecto" required>
-            <option value="">-- Seleccionar --</option>
-            <option value="Productor">Productor</option>
-            <option value="Empresa">Empresa</option>
-            <option value="Institución">Institución</option>
-            <option value="Voluntario">Voluntario</option>
-          </select>
+        <!-- Identificación y Tipo prospecto -->
+        <div class="grid-2 tight">
+          <div class="field">
+            <label for="00NgK00001edehD">Identificación / Cédula jurídica</label>
+            <input id="00NgK00001edehD" name="00NgK00001edehD" type="text" maxlength="255" />
+          </div>
+          <div class="field">
+            <label for="00NgK00001eiDYH">Tipo</label>
+            <select id="00NgK00001eiDYH" name="00NgK00001eiDYH" title="Tipo prospecto" required>
+              <option value="">-- Seleccionar --</option>
+              <option value="Productor">Productor</option>
+              <option value="Empresa">Empresa</option>
+              <option value="Institución">Institución</option>
+              <option value="Voluntario">Voluntario</option>
+            </select>
+          </div>
         </div>
 
         <fieldset class="address">
@@ -322,7 +324,6 @@
               <label for="country">País</label>
               <input id="country" name="country" type="text" value="Costa Rica" />
             </div>
-            <div class="field is-spacer"></div>
           </div>
         </fieldset>
 
