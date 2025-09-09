@@ -231,9 +231,7 @@
 
 
 
-
-
-    <section id="sumate" class="form-section">
+<section id="sumate" class="form-section">
   <div class="container">
     <div class="form-wrap">
       <header class="form-header">
@@ -277,8 +275,19 @@
             <label for="company">Empresa / Organización</label>
             <input id="company" name="company" type="text" maxlength="40" />
           </div>
+
           <div class="field">
-            <label for="00NgK00001edehD">Identificación / Cédula jurídica</label>
+            <label for="00NgK00001fdlgT">Tipo de identificación</label>
+            <select id="00NgK00001fdlgT" name="00NgK00001fdlgT" title="Identification Type">
+              <option value="">--None--</option>
+              <option value="Cédula Física">Cédula Física</option>
+              <option value="Cédula Jurídica">Cédula Jurídica</option>
+              <option value="Nite">Nite</option>
+              <option value="DIMEX">DIMEX</option>
+              <option value="Pasaporte">Pasaporte</option>
+            </select>
+
+            <label for="00NgK00001edehD" style="margin-top:8px; display:block;">Identificación / Cédula jurídica</label>
             <input id="00NgK00001edehD" name="00NgK00001edehD" type="text" maxlength="255" />
           </div>
         </div>
@@ -322,9 +331,6 @@
     </div>
   </div>
 </section>
-
-
-
 
 
 
