@@ -118,6 +118,56 @@ img{max-width:100%; display:block}
 .legal-card .footnote{margin-top:22px; font-size:14px; color:#566}
 .legal-page .site-footer{margin-top:0; padding-top:28px; border-top:1px solid rgba(255,255,255,.15);}
 
+.form-divider{border:0; height:1px;background:linear-gradient(90deg, transparent, rgba(0,0,0,.06), transparent); margin: 18px 0 12px;}
+/* Caja visual del bloque legal */
+.card-legal{
+  background: #f6fbf9;             /* verde muy claro */
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+/* Checkbox lindo y alineado */
+.checkbox.pretty{
+  display:flex; align-items:flex-start; gap:10px;
+  line-height:1.45;
+}
+.checkbox.pretty input{
+  appearance:none; -webkit-appearance:none; -moz-appearance:none;
+  width:18px; height:18px; margin:2px 0 0 0;
+  border:2px solid #0b4f4a; border-radius:6px; background:#fff; 
+  display:inline-block; position:relative; cursor:pointer;
+  outline:none; transition:.15s border-color,.15s box-shadow,.15s background;
+}
+.checkbox.pretty input:focus{ box-shadow:0 0 0 3px rgba(11,79,74,.15); }
+.checkbox.pretty input:checked{ background:#0b4f4a; border-color:#0b4f4a; }
+.checkbox.pretty input:checked::after{
+  content:""; position:absolute; top:2px; left:5px; width:5px; height:10px;
+  border:2px solid #fff; border-top:0; border-left:0; transform:rotate(45deg);
+}
+.checkbox.pretty .box{ display:none; }
+.checkbox.pretty .label{
+  color:#233; font-size:14px;
+}
+.checkbox.pretty a{
+  color:#e85d04; text-decoration:underline; font-weight:600;
+}
+.checkbox.pretty a:hover{ text-decoration:none; }
+
+.legal-note{
+  display:flex; align-items:center; gap:8px;
+  margin:8px 0 0; font-size:12px; color:#6b7280;
+}
+.legal-note .lock{ width:14px; height:14px; fill:#6b7280; }
+
+.btn-submit{
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+
+
 /* Breakpoints */
 @media (max-width:980px){.header-inner{grid-template-columns:1fr auto; row-gap:12px; padding:16px 18px;} .nav{grid-column:1 / -1; justify-self:center; gap:24px;} .brand-logo{height:84px} .brand-title{font-size:26px} .brand-sub{font-size:14px} .hero-inner{grid-template-columns:1fr} .hero-stack-img{position:static; width:100%; margin-top:12px; border:none} .card-grid{grid-template-columns:repeat(2,1fr)} .stories-inner{grid-template-columns:1fr} .impact-grid{grid-template-columns:1fr; gap:12px} .prog-grid{grid-template-columns:1fr} .grid-2{grid-template-columns:1fr} .footer-inner{grid-template-columns:1fr; text-align:center} .footer-copy{text-align:center}}
 @media (max-width:900px){.grid-2,.grid-2.tight{grid-template-columns:1fr;} .form-wrap{max-width:960px}}
